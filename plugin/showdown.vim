@@ -37,11 +37,12 @@ function! s:ShowdownRun(command)
                 \ "start /b " . a:command :
                 \ a:command . "&"
 
-    let l:func = has('nvim') ?
+    let l:Func = has('nvim') ?
                 \ function('jobstart') :
                 \ function('system')
 
-    silent! call l:func(l:platform_command)
+    echom l:platform_command
+    silent! call l:Func(l:platform_command)
 endfunction
 
 function! s:ShowdownStart()
