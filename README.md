@@ -7,10 +7,11 @@ A Vim plugin for the [showdown][github-showdown] live markdown previewer.
 First, make sure you have [showdown][github-showdown-install] installed.
 
 Then, install this plugin using your preferred method. I recommend using [vim-plug][github-vim-plug],
-so it's a s simple as
+so it's as simple as adding
 ```vim
 Plug 'cluttrdev/vim-showdown'
 ```
+to your `~/.vimrc` and running `:PlugInstall` inside vim.
 
 ## Usage
 
