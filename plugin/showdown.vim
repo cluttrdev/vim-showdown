@@ -35,25 +35,24 @@ endif
 function! s:ShowdownRun(command)
     let l:platform_command = has('win32') ?
                 \ "start /b " . a:command :
-                \ a:command . "&"
+                \ a:command . " &"
 
     let l:Func = has('nvim') ?
                 \ function('jobstart') :
                 \ function('system')
 
-    echom l:platform_command
     silent! call l:Func(l:platform_command)
 endfunction
 
 function! s:ShowdownStart()
-    let l:command = g:showdown_command . "\"" . expand('%:p') . "\"" .
+    let l:command = g:showdown_command . " " . "\"" . expand('%:p') . "\"" .
                 \ " --port " . g:showdown_port
 
     call s:ShowdownRun(command)
 endfunction
 
 function! s:ShowdownStop()
-    let l:command = g:showdown_command . " --stop " .
+    let l:command = g:showdown_command . " --stop" .
                 \ " --port " . g:showdown_port
 
     call s:ShowdownRun(command)
